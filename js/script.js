@@ -73,6 +73,16 @@ const displayImages = function(item, index){
     col.innerHTML += colContent;
 
     showHTML.append(col);
+
+    const miniaturesHTML = document.querySelector('.miniatures');
+    // const miniatureHTML = document.createElement('div');
+    // miniatureHTML.className = 'miniature';
+
+    const minContent = `
+    <div class="miniature micro" style="background-image: url(${item.url}); background-size: cover;"></div>
+    `;
+
+    miniaturesHTML.innerHTML += minContent;
 }
 
 images.forEach(displayImages);
@@ -80,35 +90,43 @@ images.forEach(displayImages);
 function displayLand(){
     let activeLand = 0;
     let landscapesHTML = document.querySelectorAll('.landscape-wrapper');
+    let microsHTML = document.querySelectorAll('.miniature');
     landscapesHTML[activeLand].classList.toggle('d-none');
+    microsHTML[activeLand].classList.toggle('micro');
     const slideshow = setInterval(function(){
         landscapesHTML[activeLand].classList.toggle('d-none');
+        microsHTML[activeLand].classList.toggle('micro');
         activeLand++;
         if(activeLand == landscapesHTML.length){
             activeLand = 0;
         }
         landscapesHTML[activeLand].classList.toggle('d-none');
+        microsHTML[activeLand].classList.toggle('micro');
     }, 5000);
 
 
     const btnLeft = document.querySelector('.toggle-land.toLeft');
     btnLeft.addEventListener('click', function(){
         landscapesHTML[activeLand].classList.toggle('d-none');
+        microsHTML[activeLand].classList.toggle('micro');
         activeLand--;
         if(activeLand < 0){
             activeLand = landscapesHTML.length - 1;
         }
         landscapesHTML[activeLand].classList.toggle('d-none');
+        microsHTML[activeLand].classList.toggle('micro');
     })
 
     const btnRight = document.querySelector('.toggle-land.toRight');
     btnRight.addEventListener('click', function(){
         landscapesHTML[activeLand].classList.toggle('d-none');
+        microsHTML[activeLand].classList.toggle('micro');
         activeLand++;
         if(activeLand == landscapesHTML.length){
             activeLand = 0;
         }
         landscapesHTML[activeLand].classList.toggle('d-none');
+        microsHTML[activeLand].classList.toggle('micro');
     })
 
 }

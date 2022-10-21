@@ -18,10 +18,10 @@ body{
     0%{
         opacity: 0%;
     }
-    30%{
+    35%{
         opacity: 100%;
     }
-    70%{
+    65%{
         opacity: 100%;
     }
     100%{
@@ -94,4 +94,31 @@ body{
     font-size: 1.5rem;
     color: white;
     vertical-align: middle;
+}
+
+.miniatures{
+    bottom: 100px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 50%;
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 500;
+    overflow: hidden;
+}
+
+.miniature{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    background-color: palegreen;
+    margin: 15px auto;
+    transition: transform 1s ease-out, filter 1s ease-out;
+    box-shadow: 0 0 0 10px rgba(255,255,255, 1);
+}
+
+.micro{
+    transform: scale(0.3);
+    filter: grayscale(100%);
+    box-shadow: 0 0 0 10px rgba(255,255,255, 0.4);
 }
