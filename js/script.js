@@ -81,7 +81,7 @@ function displayLand(){
     let activeLand = 0;
     let landscapesHTML = document.querySelectorAll('.landscape-wrapper');
     landscapesHTML[activeLand].classList.toggle('d-none');
-    setInterval(function(){
+    const slideshow = setInterval(function(){
         landscapesHTML[activeLand].classList.toggle('d-none');
         activeLand++;
         if(activeLand == landscapesHTML.length){
@@ -89,6 +89,28 @@ function displayLand(){
         }
         landscapesHTML[activeLand].classList.toggle('d-none');
     }, 5000);
+
+
+    const btnLeft = document.querySelector('.toggle-land.toLeft');
+    btnLeft.addEventListener('click', function(){
+        landscapesHTML[activeLand].classList.toggle('d-none');
+        activeLand--;
+        if(activeLand < 0){
+            activeLand = landscapesHTML.length - 1;
+        }
+        landscapesHTML[activeLand].classList.toggle('d-none');
+    })
+
+    const btnRight = document.querySelector('.toggle-land.toRight');
+    btnRight.addEventListener('click', function(){
+        landscapesHTML[activeLand].classList.toggle('d-none');
+        activeLand++;
+        if(activeLand == landscapesHTML.length){
+            activeLand = 0;
+        }
+        landscapesHTML[activeLand].classList.toggle('d-none');
+    })
+
 }
 
 displayLand();
