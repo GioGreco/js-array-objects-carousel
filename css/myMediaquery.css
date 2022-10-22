@@ -1,0 +1,43 @@
+@media screen and (min-width: 576px){
+    .caption{
+        transform: translate(-50%, -80%);
+        visibility: visible;
+    }
+    .country{
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .miniatures > *{
+        height: 90px;
+        width: 90px;
+    }
+    .caption{
+        transform: translate(-50%, -75%);
+        visibility: visible;
+    }
+    .country::after, .country::before{
+        content: '';
+        height: 2px;
+        background-color: white;
+        display: inline-block;
+        width: 20%;
+        vertical-align: middle;
+        margin: 0 10px;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .miniatures > *{
+        height: 120px;
+        width: 120px;
+    }
+    .country{
+        font-size: calc(1.325rem + .9vh);
+    }
+    .caption{
+        transform: translate(-50%, -70%);
+        visibility: visible;
+    }
+}

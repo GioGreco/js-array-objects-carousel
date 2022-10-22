@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/myMediaquery.css">
     <script type="text/javascript" src="./js/myFunctions.js"></script>
 </head>
 <body> 
@@ -22,8 +23,12 @@
                 <div class="position-fixed toggle-land toRight">
                     <i class="fa-solid fa-chevron-right"></i>
                 </div>
-                <div class="miniatures position-fixed rounded-pill d-flex justify-content-between align-items-center flex-wrap">
+                <div class="miniatures position-fixed rounded-pill d-flex justify-content-between align-items-center flex-nowrap">
                    
+                </div>
+                <div class="reproduction position-fixed rounded-pill">
+                    <div class="pausePlay pause"><i class="fa-solid fa-pause"></i></div>
+                    <div class="reverse"><i class="fa-solid fa-arrow-right-arrow-left"></i></div>
                 </div>
             </div>
         </div>

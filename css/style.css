@@ -8,13 +8,24 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
+.landscape-wrapper{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
 .landscape{
     width: 100%;
     height: 100%;
-    animation: fade 5s ease-in-out;
 }
 
-@keyframes fade{
+.fade{
+    animation: fading 5s ease-in-out;
+}
+
+@keyframes fading{
     0%{
         opacity: 0%;
     }
@@ -28,33 +39,32 @@ body{
         opacity: 0%;
     }
 }
-
+/* landscape description style */
 .caption{
     top: 0;
     left: 50%;
-    transform: translate(-50%, 0);
+    visibility: hidden;
     width: 40%;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.4);
     padding: 20px;
+    padding-bottom: 0;
     border-bottom-right-radius: 40px;
     border-bottom-left-radius: 40px;
     color: white;
-    animation: fade 5s ease-in-out;
+    animation: fading 5s ease-in-out;
+    transition: transform .5s ease-in-out;
 }
 
-.landscape-wrapper{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+.caption:hover{
+    transform: translate(-50%, 0);
 }
 
-/* .country{
-} */
+.description{
+    font-size: 1rem;
+}
 
-.country::after, .country::before{
+/* .country::after, .country::before{
     content: '';
     height: 2px;
     background-color: white;
@@ -62,8 +72,17 @@ body{
     width: 30%;
     vertical-align: middle;
     margin: 0 10px;
+} */
+
+.drag-down{
+    height: 50px;
+    width: 50px;
+    display: block;
+    margin: 20px auto 0;
+    font-size: 1.5rem;
 }
 
+/* left/right buttons style */
 .toggle-land{
     height: 100px;
     width: 100px;
@@ -96,20 +115,17 @@ body{
     vertical-align: middle;
 }
 
+/* miniatures style */
 .miniatures{
     bottom: 100px;
     left: 50%;
     transform: translate(-50%, 0);
-    width: 50%;
+    width: 60%;
     height: 150px;
-    background-color: rgba(0, 0, 0, 0.4);
     z-index: 500;
-    overflow: hidden;
 }
 
 .miniature{
-    height: 120px;
-    width: 120px;
     border-radius: 50%;
     background-color: palegreen;
     margin: 15px auto;
@@ -121,4 +137,50 @@ body{
     transform: scale(0.3);
     filter: grayscale(100%);
     box-shadow: 0 0 0 10px rgba(255,255,255, 0.4);
+}
+
+/* pause button + reverse button style */
+.reproduction{
+    bottom: 70px;
+    right: 70px;
+    z-index: 500;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+.reproduction:hover{
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+.pause{
+    background-color: palevioletred;
+}
+
+.play{
+    background-color: palegreen;
+}
+
+.reproduction .reverse{
+    background-color: palegoldenrod;
+}
+
+.action{
+    color: green;
+}
+
+.reproduction .pausePlay:hover, .reproduction .reverse:hover{
+    color: white;
+}
+
+.reproduction > *{
+    float: left;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.reproduction > * > *{
+    vertical-align: middle;
 }
